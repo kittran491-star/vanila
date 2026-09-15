@@ -34,10 +34,25 @@
 
   <div id="scratch" class="screen">
     <button id="backBtn">←</button>
-    <div class="frame">
-      <img id="rewardImage">
-      <canvas id="scratchCanvas"></canvas>
+  <div class="scratch-frame">
+
+  <!-- Ảnh thật -->
+  <img id="rewardImage" class="reward-img">
+
+  <!-- Ảnh bìa che kín -->
+  <div id="coverCard" class="cover-card">
+    <img src="assets/cover.jpg" class="cover-img">
+
+    <div class="cover-text">
+      <h3>Tem Phiếu Bí Mật</h3>
+      <p>Cào để mở bất ngờ ✨</p>
     </div>
+  </div>
+
+  <!-- Lớp bạc -->
+  <canvas id="scratchCanvas"></canvas>
+
+</div>
     <div class="progress"><div id="progressBar"></div></div>
   </div>
 
