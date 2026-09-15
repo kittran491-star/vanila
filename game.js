@@ -92,12 +92,15 @@ function getPos(e){
   };
 }
 
-function erase(x,y){
-  ctx.globalCompositeOperation='destination-out';
-  ctx.beginPath();
-  ctx.arc(x,y,22,0,Math.PI*2);
-  ctx.fill();
-  checkProgress();
+function erase(x, y){
+
+    ctx.globalCompositeOperation = "destination-out";
+
+    ctx.beginPath();
+    ctx.arc(x, y, 42, 0, Math.PI * 2);
+    ctx.fill();
+
+    checkProgress();
 }
 
 canvas.onpointerdown=e=>{
