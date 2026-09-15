@@ -24,7 +24,6 @@ document.querySelectorAll('.card-choice').forEach(btn=>{
   chosen = +btn.dataset.id;
 
 // Luôn hiện ảnh bìa, không lộ kết quả
-$('previewImage').src = "assets/cover.jpg";
 
 $('flipCard').classList.remove('flipped');
 show('flip');
