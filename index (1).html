@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tem Phiếu Bí Mật</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="welcome" class="screen active">
+    <h1>🎟️ TEM PHIẾU BÍ MẬT</h1>
+    <p>Một chiếc tem nhỏ dành riêng cho bé ✨</p>
+    <button id="startBtn">Bắt đầu</button>
+  </div>
+
+  <div id="choose" class="screen">
+    <h2>Chọn một chiếc tem</h2>
+    <div class="grid">
+      <button class="card-choice" data-id="1">💘 Tem 1</button>
+      <button class="card-choice" data-id="2">🌻 Tem 2</button>
+      <button class="card-choice" data-id="3">🍀 Tem 3</button>
+      <button class="card-choice" data-id="4">🌸 Tem 4</button>
+      <button class="card-choice" data-id="5">🍦 Tem 5</button>
+    </div>
+  </div>
+
+  <div id="flip" class="screen">
+    <p>Chạm để lật tem ✨</p>
+    <div id="flipCard" class="flip-card">
+      <div class="front">🎟️</div>
+      <div class="back"><img id="previewImage"></div>
+    </div>
+  </div>
+
+  <div id="scratch" class="screen">
+    <button id="backBtn">←</button>
+    <div class="frame">
+      <img id="rewardImage">
+      <canvas id="scratchCanvas"></canvas>
+    </div>
+    <div class="progress"><div id="progressBar"></div></div>
+  </div>
+
+  <div id="letter" class="screen">
+    <img id="letterImage">
+    <p id="typewriter"></p>
+    <button id="restartBtn">Chơi lại 💖</button>
+  </div>
+
+  <audio id="bgm" loop>
+    <source src="assets/bgm.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="scratchSound">
+    <source src="assets/scratch.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="game.js"></script>
+</body>
+</html>
