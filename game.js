@@ -21,10 +21,13 @@ $('startBtn').onclick=()=>show('choose');
 
 document.querySelectorAll('.card-choice').forEach(btn=>{
   btn.onclick=()=>{
-    chosen=+btn.dataset.id;
-    $('previewImage').src=DATA[chosen].img;
-    $('flipCard').classList.remove('flipped');
-    show('flip');
+  chosen = +btn.dataset.id;
+
+// Luôn hiện ảnh bìa, không lộ kết quả
+$('previewImage').src = "assets/cover.jpg";
+
+$('flipCard').classList.remove('flipped');
+show('flip');
   };
 });
 
