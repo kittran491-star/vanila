@@ -24,13 +24,29 @@
     </div>
   </div>
 
-  <div id="flip" class="screen">
-    <p>Chạm để lật tem ✨</p>
+<div id="flip" class="screen">
+
+  <p class="caption">Chạm để lật tem ✨</p>
+
+  <div class="flip-container">
+
     <div id="flipCard" class="flip-card">
-      <div class="front">🎟️</div>
-      <div class="back"><img id="previewImage"></div>
+
+      <!-- Mặt trước: luôn là ảnh bìa -->
+      <div class="card-face front">
+        <img src="assets/cover.jpg" class="cover-img">
+      </div>
+
+      <!-- Mặt sau: vẫn là ảnh bìa -->
+      <div class="card-face back">
+        <img src="assets/cover.jpg" class="cover-img">
+      </div>
+
     </div>
+
   </div>
+
+</div>
 
   <div id="scratch" class="screen">
     <button id="backBtn">←</button>
