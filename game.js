@@ -103,24 +103,42 @@ function erase(x, y){
     checkProgress();
 }
 
-canvas.onpointerdown=e=>{
-  drawing=true;
-  const p=getPos(e);
-  erase(p.x,p.y);
+let lastPoint = null;
+
+canvas.onpointerdown = (e) => {
+    drawing = true;
+    lastPoint = getPos(e);
+    erase(lastPoint.x, lastPoint.y);
 };
 
-canvas.onpointermove=e=>{
-  if(!drawing) return;
-  const p=getPos(e);
-  erase(p.x,p.y);
+canvas.onpointermove = (e) => {
+
+    if (!drawing) return;
+
+    const p = getPos(e);
+
+    ctx.save();
+    ctx.globalCompositeOperation = "destination-out";
+    ctx.lineCap = "round";
+    ctx.lineJoin = "round";
+    ctx.lineWidth = 84;
+
+    ctx.beginPath();
+    ctx.moveTo(lastPoint.x, lastPoint.y);
+    ctx.lineTo(p.x, p.y);
+    ctx.stroke();
+
+    ctx.restore();
+
+    lastPoint = p;
+
+    checkProgress();
 };
 
-window.onpointerup=()=>drawing=false;
-
-function checkProgress(){
-  const pixels=ctx.getImageData(
-    0,0,canvas.width,canvas.height
-  ).data;
+window.onpointerup = () => {
+    drawing = false;
+    lastPoint = null;
+};
 
   let cleared=0;
 
