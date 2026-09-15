@@ -29,15 +29,25 @@ show('flip');
   };
 });
 
-$('flipCard').onclick=()=>{
-  $('flipCard').classList.add('flipped');
-  setTimeout(()=>{
-    $('rewardImage').src=DATA[chosen].img;
-    show('scratch');
-    setupScratch();
-  },650);
-};
+$('flipCard').onclick = () => {
 
+    $('flipCard').classList.add('flipped');
+
+    setTimeout(() => {
+
+        // Gán ảnh thật cho màn cào
+        $('rewardImage').src = DATA[chosen].img;
+
+        // Hiện lại bìa mỗi lần chơi
+        document.getElementById("coverCard").style.display = "flex";
+
+        show("scratch");
+
+        setupScratch();
+
+    }, 700);
+
+};
 $('backBtn').onclick=()=>show('choose');
 $('restartBtn').onclick=()=>show('welcome');
 
@@ -46,6 +56,7 @@ const ctx=canvas.getContext('2d',{willReadFrequently:true});
 let drawing=false;
 
 function setupScratch(){
+ document.getElementById("coverCard").style.display = "flex";
   const rect=canvas.getBoundingClientRect();
   const dpr=window.devicePixelRatio||1;
 
