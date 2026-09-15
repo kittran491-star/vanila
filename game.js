@@ -152,15 +152,23 @@ window.onpointerup = () => {
 
   $('progressBar').style.width=percent+'%';
 
-  if(percent>55){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
+if (percent >= 45) {
 
-    $('letterImage').src=DATA[chosen].img;
+    // Xóa lớp bạc
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Ẩn ảnh bìa
+    document.getElementById("coverCard").style.display = "none";
+
+    // Hiện ảnh thật
+    document.getElementById("rewardImage").src = DATA[chosen].img;
+
+    // Sang màn hình kết quả
+    document.getElementById("letterImage").src = DATA[chosen].img;
 
     typeWriter(DATA[chosen].msg);
 
-    show('letter');
-  }
+    show("letter");
 }
 
 function typeWriter(text){
